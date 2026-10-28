@@ -1,0 +1,70 @@
+.ui-segmented {
+  display: inline-flex;
+  align-items: stretch;
+  gap: var(--segmented-gap, 4px);
+
+  min-width: 0;
+  max-width: 100%;
+
+  padding: var(--segmented-padding, 3px);
+
+  background: var(--segmented-bg, var(--surface-soft));
+  border: 1px solid var(--segmented-line, var(--line));
+  border-radius: var(--segmented-radius, var(--radius-sm));
+}
+
+.ui-segmented__button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  flex: 1 1 0;
+
+  min-width: 0;
+  min-height: var(--segmented-button-height, 30px);
+
+  margin: 0;
+  padding: 0 var(--segmented-button-padding-x, 10px);
+
+  color: var(--segmented-ink, var(--ink-soft));
+  background: transparent;
+  border: 0;
+  border-radius: var(--segmented-button-radius, var(--radius-xs));
+
+  font: inherit;
+  font-size: var(--segmented-font-size, 12px);
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.ui-segmented__button:focus-visible {
+  outline: 2px solid var(--segmented-focus-ink, var(--brand));
+  outline-offset: -2px;
+}
+
+.ui-segmented__button.is-active {
+  color: var(--segmented-active-ink, var(--brand));
+  background: var(--segmented-active-bg, var(--surface));
+}
+
+@media (hover: hover) {
+  .ui-segmented__button:hover:not(.is-active) {
+    color: var(--segmented-hover-ink, var(--brand));
+    background: var(--segmented-hover-bg, var(--surface-selected));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-segmented__button {
+    transition: none;
+  }
+}

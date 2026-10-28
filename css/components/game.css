@@ -1,0 +1,148 @@
+/* ============================================================
+   Каркас игры
+   ============================================================ */
+
+.game {
+  flex: 1 1 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--game-gap, 10px);
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.game > .ui-status {
+  flex: 0 0 auto;
+}
+
+.game__board {
+  flex: 1 1 0;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Grid включается только по запросу gameKit.board({ columns }). */
+
+.game__board[data-layout="grid"] {
+  display: grid;
+
+  grid-template-columns:
+    repeat(var(--game-columns, 3), minmax(0, 1fr));
+
+  grid-auto-rows: minmax(0, 1fr);
+
+  gap: var(--game-board-gap, 8px);
+}
+
+.game__actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--game-actions-gap, 8px);
+}
+
+/* ============================================================
+   Базовая игровая ячейка
+   ============================================================ */
+
+.game__cell {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: grid;
+  place-items: center;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding: var(--game-cell-padding, 4px);
+
+  color: var(--game-cell-ink, var(--ink));
+  background: var(--game-cell-bg, var(--card-bg));
+  border: 1px solid var(--game-cell-line, var(--card-line));
+  border-radius: var(--game-cell-radius, var(--radius-sm));
+
+  font: inherit;
+  font-size: var(--game-cell-font-size, clamp(20px, 5vw, 42px));
+  font-weight: 800;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.game__cell:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -3px;
+}
+
+.game__cell:disabled {
+  /*
+   * Занятая игровая ячейка может быть disabled,
+   * но её содержимое должно оставаться читаемым.
+   */
+  opacity: 1;
+  cursor: default;
+}
+
+.game__cell.is-selected {
+  color: var(--game-cell-selected-ink, var(--brand));
+  background: var(--game-cell-selected-bg, var(--surface-selected));
+  border-color: var(--game-cell-selected-line, var(--brand));
+}
+
+.game__cell.is-winning {
+  color: var(--game-cell-winning-ink, var(--success));
+  background: var(--game-cell-winning-bg, var(--success-soft));
+  border-color: var(--game-cell-winning-line, var(--success));
+}
+
+@media (hover: hover) {
+  .game__cell:hover:not(:disabled) {
+    background: var(--game-cell-hover-bg, var(--surface-selected));
+    border-color: var(--game-cell-hover-line, var(--brand));
+  }
+}
+
+/* ============================================================
+   Обычная мобильная страница
+   Поле получает естественную высоту
+   ============================================================ */
+
+@media (max-width: 760px) {
+  body:not([data-screen="fullscreen"]) .game {
+    flex: 0 0 auto;
+  }
+
+  body:not([data-screen="fullscreen"]) .game__board {
+    flex: 0 0 auto;
+  }
+
+  body:not([data-screen="fullscreen"])
+    .game__board[data-layout="grid"] {
+    grid-auto-rows: auto;
+  }
+
+  body:not([data-screen="fullscreen"])
+    .game__board[data-layout="grid"] > .game__cell {
+    aspect-ratio: var(--game-cell-aspect-ratio, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game__cell {
+    transition: none;
+  }
+}

@@ -1,0 +1,43 @@
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.ui-field__label {
+  min-width: 0;
+
+  color: var(--field-label-ink, var(--ink-soft));
+
+  font-size: var(--field-label-size, 11px);
+  font-weight: 800;
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-field__control {
+  min-width: 0;
+}
+
+.ui-field__note {
+  min-width: 0;
+
+  color: var(--field-note-ink, var(--ink-soft));
+
+  font-size: var(--field-note-size, 11px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ui-field__note:empty {
+  display: none;
+}
+
+.ui-field--compact {
+  gap: 4px;
+}

@@ -1,0 +1,198 @@
+/* ============================================================
+   Дисплей
+   ============================================================ */
+
+.ui-display {
+  box-sizing: border-box;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--display-gap, 6px);
+
+  width: 100%;
+  min-width: 0;
+  min-height: var(--display-min-height, 84px);
+
+  margin: 0;
+  padding: var(--display-padding, 12px);
+
+  color: var(--display-ink);
+  background: var(--display-bg);
+  border: 1px solid var(--display-line);
+  border-radius: var(--display-radius, var(--radius-md));
+}
+
+/* ============================================================
+   Верхняя строка
+   ============================================================ */
+
+.ui-display__top {
+  display: flex;
+  align-items: center;
+  gap: var(--display-gap, 6px);
+
+  min-width: 0;
+}
+
+.ui-display__title {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  color: var(--display-title-ink, var(--ink-soft));
+
+  font-size: var(--display-title-size, 11px);
+  font-weight: 800;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-display__actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: var(--display-gap, 6px);
+}
+
+/* ============================================================
+   Значение
+   ============================================================ */
+
+.ui-display__value {
+  flex: 1 1 auto;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.ui-display__value > input {
+  box-sizing: border-box;
+
+  width: 100%;
+  min-width: 0;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+
+  font: inherit;
+  font-size: var(--display-value-size, clamp(26px, 5vw, 40px));
+  font-weight: 900;
+  line-height: 1.15;
+
+  text-align: right;
+
+  cursor: text;
+}
+
+.ui-display__value > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ============================================================
+   Вспомогательные строки
+   ============================================================ */
+
+.ui-display__preview {
+  min-width: 0;
+
+  color: var(--display-preview-ink);
+
+  font-size: var(--display-preview-size, 12px);
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-display__preview:empty {
+  display: none;
+}
+
+.ui-display__note {
+  min-width: 0;
+
+  color: var(--display-note-ink, var(--ink-soft));
+
+  font-size: var(--display-note-size, 11px);
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-display__note:empty {
+  display: none;
+}
+
+/* ============================================================
+   Компактный режим
+   ============================================================ */
+
+.ui-display--compact {
+  min-height: var(--display-compact-min-height, 64px);
+
+  padding: var(--display-compact-padding, 9px);
+  gap: var(--display-compact-gap, 4px);
+}
+
+.ui-display--compact .ui-display__value > input {
+  font-size: var(--display-compact-value-size, 22px);
+}
+
+.ui-display--compact .ui-display__preview {
+  font-size: var(--display-compact-preview-size, 11px);
+}
+
+.ui-display--compact .ui-display__note {
+  font-size: var(--display-compact-note-size, 10px);
+}
+
+/* ============================================================
+   Мобильный режим
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .ui-display {
+    min-height: var(--display-mobile-min-height, 72px);
+
+    padding: var(--display-mobile-padding, 10px);
+  }
+
+  .ui-display__value > input {
+    font-size: var(--display-mobile-value-size, 28px);
+  }
+
+  .ui-display--compact {
+    min-height: var(--display-mobile-compact-min-height, 58px);
+
+    padding: var(--display-mobile-compact-padding, 8px);
+  }
+
+  .ui-display--compact .ui-display__value > input {
+    font-size: var(--display-mobile-compact-value-size, 20px);
+  }
+}

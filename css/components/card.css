@@ -1,0 +1,121 @@
+/* ============================================================
+   Базовая карточка
+   ============================================================ */
+
+.ui-card {
+  box-sizing: border-box;
+
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: var(--card-padding, 12px);
+
+  color: var(--card-ink, var(--ink));
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: var(--card-radius, var(--radius-md));
+
+  font: inherit;
+  text-align: left;
+}
+
+/* ============================================================
+   Внутренние блоки
+   ============================================================ */
+
+.ui-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--card-gap, 10px);
+
+  min-width: 0;
+}
+
+.ui-card__title {
+  min-width: 0;
+
+  font-size: var(--card-title-size, 14px);
+  font-weight: 800;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-card__body {
+  min-width: 0;
+
+  margin-top: var(--card-body-gap, 8px);
+
+  font-size: var(--card-body-size, 12px);
+  line-height: 1.5;
+
+  color: var(--card-body-ink, var(--ink-soft));
+}
+
+.ui-card__body:empty {
+  display: none;
+}
+
+/* ============================================================
+   Кликабельная карточка
+   ============================================================ */
+
+button.ui-card,
+.ui-card--clickable {
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+button.ui-card:focus-visible,
+.ui-card--clickable:focus-visible {
+  outline: 2px solid var(--card-focus-ink, var(--brand));
+  outline-offset: 2px;
+}
+
+button.ui-card:disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  button.ui-card:hover:not(:disabled),
+  .ui-card--clickable:hover:not(:disabled) {
+    color: var(--card-hover-ink, var(--brand));
+    background: var(--card-hover-bg, var(--surface-selected));
+    border-color: var(--card-hover-line, var(--brand));
+  }
+}
+
+button.ui-card:active:not(:disabled),
+.ui-card--clickable:active:not(:disabled) {
+  color: var(--card-active-ink, var(--brand));
+  background: var(--card-active-bg, var(--surface-selected));
+  border-color: var(--card-active-line, var(--brand));
+}
+
+/* ============================================================
+   Выбранная карточка
+   ============================================================ */
+
+.ui-card.is-selected {
+  color: var(--card-selected-ink, var(--brand));
+  background: var(--card-selected-bg);
+  border-color: var(--card-selected-line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.ui-card,
+  .ui-card--clickable {
+    transition: none;
+  }
+}

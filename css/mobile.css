@@ -1,0 +1,407 @@
+/* ============================================================
+   Общая мобильная компоновка
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .app {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .header {
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    gap: 5px;
+    padding: 5px 8px;
+  }
+
+  .brand-mark {
+    font-size: 14px;
+  }
+
+  .brand-beta {
+    padding: 2px 5px;
+    font-size: 8px;
+  }
+
+  .header-right {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .radio {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    gap: 4px;
+
+    min-width: 0;
+    min-height: 30px;
+    padding: 2px 3px 2px 7px;
+  }
+
+  .radio-station {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    gap: 5px;
+
+    min-width: 0;
+    padding-right: 1px;
+  }
+
+  .radio-station-name {
+    max-width: 86px;
+    font-size: 10px;
+  }
+
+  .radio-status-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .radio-icon-button {
+    width: 26px;
+    height: 26px;
+    min-height: 26px;
+    font-size: 12px;
+  }
+
+  .radio-modal {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: auto;
+    z-index: 100;
+
+    width: min(78vw, 320px);
+    min-width: 240px;
+    max-width: none;
+  }
+
+  .radio-modal__card {
+    max-height: min(65dvh, 480px);
+    overflow: auto;
+  }
+
+  .help-btn,
+  .community-link {
+    flex: 0 0 auto;
+
+    width: 34px;
+    height: 34px;
+    min-height: 34px;
+
+    font-size: 15px;
+  }
+
+  .community-link__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .slot {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .slot[data-slot="A"] {
+    order: 1;
+  }
+
+  .system-panel {
+    order: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 6px;
+  }
+
+  .slot[data-slot="B"] {
+    order: 3;
+  }
+
+  .system-divider {
+    width: 1px;
+    height: 22px;
+  }
+
+  .block-picker {
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.15fr);
+    gap: 6px;
+  }
+
+  .block-picker .ui-select {
+    height: 38px;
+    min-height: 38px;
+
+    padding-left: 8px;
+    padding-right: 27px;
+
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   Обычный мобильный режим
+   ============================================================ */
+
+@media (max-width: 760px) {
+  body:not([data-screen="fullscreen"]) {
+    height: auto;
+    min-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  body:not([data-screen="fullscreen"]) .app {
+    height: auto;
+    min-height: 100dvh;
+    max-height: none;
+  }
+
+  body:not([data-screen="fullscreen"]) .workspace,
+  body:not([data-screen="fullscreen"]) .slot,
+  body:not([data-screen="fullscreen"]) .system-panel,
+  body:not([data-screen="fullscreen"]) .block-calc,
+  body:not([data-screen="fullscreen"]) .calc-mount,
+  body:not([data-screen="fullscreen"]) .module-host {
+    flex: 0 0 auto;
+
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    overflow: visible;
+  }
+
+  body:not([data-screen="fullscreen"]) .slot-body {
+    display: contents;
+  }
+}
+
+/* ============================================================
+   Мобильный fullscreen: вертикальный аккордеон
+   ============================================================ */
+
+@media (max-width: 760px) {
+  body.mobile-slots .app {
+    height: 100dvh;
+    min-height: 0;
+    max-width: none;
+    gap: 6px;
+
+    padding:
+      max(6px, env(safe-area-inset-top))
+      max(6px, env(safe-area-inset-right))
+      max(6px, env(safe-area-inset-bottom))
+      max(6px, env(safe-area-inset-left));
+  }
+
+  body.mobile-slots .header {
+    display: none;
+  }
+
+  body.mobile-slots .workspace {
+    flex: 1 1 0;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows:
+      minmax(44px, 1fr)
+      auto
+      44px;
+
+    min-height: 0;
+    gap: 6px;
+    overflow: hidden;
+  }
+
+  body.mobile-slots[data-mobile-active="B"] .workspace {
+    grid-template-rows:
+      44px
+      auto
+      minmax(44px, 1fr);
+  }
+
+  body.mobile-slots .slot {
+    order: initial;
+    gap: 0;
+    padding: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  body.mobile-slots .slot[data-slot="A"] {
+    grid-row: 1;
+  }
+
+  body.mobile-slots .system-panel {
+    grid-row: 2;
+    order: initial;
+
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 4px 6px;
+  }
+
+  body.mobile-slots .slot[data-slot="B"] {
+    grid-row: 3;
+  }
+
+  body.mobile-slots .system-btn {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+
+  body.mobile-slots .slot-summary {
+    appearance: none;
+
+    flex: 0 0 42px;
+
+    display: grid;
+    grid-template-columns:
+      24px
+      minmax(0, 1fr)
+      minmax(0, 30%)
+      14px;
+    align-items: center;
+    gap: 7px;
+
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+
+    margin: 0;
+    padding: 0 10px;
+
+    color: var(--ink);
+    background: var(--surface-soft);
+    border: 0;
+
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  body.mobile-slots .slot-summary-id {
+    display: grid;
+    place-items: center;
+
+    width: 24px;
+    height: 24px;
+
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xs);
+
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  body.mobile-slots .slot-expanded .slot-summary-id {
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+
+  body.mobile-slots .slot-summary-title,
+  body.mobile-slots .slot-summary-result {
+    min-width: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  body.mobile-slots .slot-summary-result {
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  body.mobile-slots .slot-summary-arrow {
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  body.mobile-slots .slot-summary:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: -3px;
+  }
+
+  body.mobile-slots .slot-body {
+    flex: 1 1 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    min-width: 0;
+    min-height: 0;
+    padding: 6px 8px 8px;
+
+    overflow: hidden;
+  }
+
+  body.mobile-slots .slot-collapsed .slot-body {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  body.mobile-slots .slot-expanded .slot-body {
+    visibility: visible;
+  }
+
+  body.mobile-slots .block-picker .ui-select {
+    height: 36px;
+    min-height: 36px;
+    font-size: 11px;
+  }
+}
+
+/* ============================================================
+   Очень узкий экран
+   ============================================================ */
+
+@media (max-width: 400px) {
+  .radio-station-name {
+    max-width: 70px;
+  }
+
+  .radio-modal {
+    left: auto;
+    right: 0;
+
+    width: min(86vw, 300px);
+    min-width: 0;
+  }
+
+  body.mobile-slots .slot-summary {
+    gap: 5px;
+    padding: 0 7px;
+  }
+
+  body.mobile-slots .system-panel {
+    gap: 7px;
+  }
+
+  .system-panel {
+    align-items: stretch;
+  }
+}

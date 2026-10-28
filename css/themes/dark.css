@@ -1,0 +1,88 @@
+body[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: #4da3ff;
+  --brand-strong: #2f86e6;
+  --brand-soft: rgb(77 163 255 / 18%);
+
+  --brand-gradient: linear-gradient(180deg, #5aa9ff, #2f86e6);
+
+  --bg: #10161d;
+  --surface: #18212b;
+  --surface-soft: #212c38;
+  --surface-selected: #24384f;
+
+  --ink: #e8eef5;
+  --ink-soft: #9aa8b6;
+  --ink-inverse: #0d1319;
+
+  --line: #2c3947;
+  --line-strong: #3c4c5d;
+
+  --success: #4ecb8b;
+  --success-soft: rgb(78 203 139 / 16%);
+
+  --warning: #e9b45c;
+  --warning-soft: rgb(233 180 92 / 16%);
+
+  --danger: #ff7b7b;
+  --danger-soft: rgb(255 123 123 / 16%);
+
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 28%);
+  --shadow-md: 0 10px 28px rgb(0 0 0 / 34%);
+
+  --control-bg: #212c38;
+  --control-ink: #e8eef5;
+  --control-line: #2c3947;
+
+  --button-bg: #212c38;
+  --button-ink: #e8eef5;
+  --button-line: #2c3947;
+
+  --button-hover-bg: #24384f;
+  --button-hover-ink: #4da3ff;
+  --button-hover-line: #3f6b94;
+
+  --button-active-bg: #1d2f42;
+  --button-active-ink: #7cbcff;
+  --button-active-line: #4da3ff;
+
+  --button-primary-bg: linear-gradient(180deg, #5aa9ff, #2f86e6);
+  --button-primary-ink: #0d1319;
+  --button-primary-line: #2f86e6;
+
+  --button-primary-hover-bg: linear-gradient(180deg, #6fb4ff, #3f92ef);
+  --button-primary-hover-ink: #0d1319;
+  --button-primary-hover-line: #4da3ff;
+
+  --button-primary-active-bg: linear-gradient(180deg, #3f92ef, #2f86e6);
+  --button-primary-active-ink: #0d1319;
+  --button-primary-active-line: #4da3ff;
+
+  --checkbox-bg: #18212b;
+  --checkbox-line: #3c4c5d;
+  --checkbox-active-bg: #4da3ff;
+  --checkbox-active-line: #2f86e6;
+  --checkbox-active-mark: #0d1319;
+
+  --card-bg: #18212b;
+  --card-line: #2c3947;
+  --card-selected-bg: #24384f;
+  --card-selected-line: #4da3ff;
+
+  --display-bg: #1a2530;
+  --display-ink: #e8eef5;
+  --display-preview-ink: #8fc3ff;
+  --display-line: #2c3947;
+
+  --result-bg: #1a2530;
+  --result-ink: #8fc3ff;
+
+  --toast-bg: #e8eef5;
+  --toast-ink: #10161d;
+
+  --dialog-bg: #18212b;
+  --dialog-ink: #e8eef5;
+  --dialog-line: #2c3947;
+  --dialog-backdrop: rgba(0, 0, 0, 0.645);
+}

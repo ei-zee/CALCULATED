@@ -1,0 +1,177 @@
+body[data-theme="summer"] {
+  color-scheme: light;
+
+  --brand: #ff7043;
+  --brand-strong: #e2542a;
+  --brand-soft: rgb(255 112 67 / 15%);
+  --brand-gradient: linear-gradient(180deg, #ff9d6b, #ff7043);
+
+  --bg: #fff7f0;
+  --surface: #fffdfb;
+  --surface-soft: #fff3ea;
+  --surface-selected: #ffe6d8;
+
+  --ink: #33241c;
+  --ink-soft: #8a6f60;
+  --ink-inverse: #ffffff;
+
+  --line: #f3ddcd;
+  --line-strong: #e6c3ac;
+
+  --success: #2f9e63;
+  --success-soft: rgb(47 158 99 / 14%);
+  --warning: #c07a1d;
+  --warning-soft: rgb(192 122 29 / 14%);
+  --danger: #d9534f;
+  --danger-soft: rgb(217 83 79 / 14%);
+
+  --shadow-sm: 0 2px 8px rgb(120 70 40 / 10%);
+  --shadow-md: 0 10px 28px rgb(120 70 40 / 12%);
+
+  --shadow-focus:
+    0 0 0 3px rgb(255 112 67 / 18%),
+    0 14px 34px rgb(120 70 40 / 14%);
+
+  --control-bg: #fff3ea;
+  --control-ink: #33241c;
+  --control-line: #f3ddcd;
+
+  --button-bg: #fff3ea;
+  --button-ink: #33241c;
+  --button-line: #f3ddcd;
+  --button-hover-bg: #ffe6d8;
+  --button-hover-ink: #e2542a;
+  --button-hover-line: #ffb08c;
+  --button-active-bg: #ffd7c2;
+  --button-active-ink: #c34320;
+  --button-active-line: #ff7043;
+
+  --button-primary-bg: linear-gradient(180deg, #ff9d6b, #ff7043);
+  --button-primary-ink: #ffffff;
+  --button-primary-line: #e2542a;
+  --button-primary-hover-bg: linear-gradient(180deg, #ff8a55, #f2602f);
+  --button-primary-hover-ink: #ffffff;
+  --button-primary-hover-line: #c34320;
+  --button-primary-active-bg: linear-gradient(180deg, #f2602f, #e2542a);
+  --button-primary-active-ink: #ffffff;
+  --button-primary-active-line: #b23a1c;
+
+  --checkbox-bg: #fffdfb;
+  --checkbox-line: #e6c3ac;
+  --checkbox-active-bg: #ff7043;
+  --checkbox-active-line: #e2542a;
+  --checkbox-active-mark: #ffffff;
+
+  --card-bg: #fffdfb;
+  --card-line: #f3ddcd;
+  --card-selected-bg: #ffe6d8;
+  --card-selected-line: #ff7043;
+
+  --display-bg: #fff3ea;
+  --display-ink: #33241c;
+  --display-preview-ink: #b23a1c;
+  --display-line: #f3ddcd;
+
+  --result-bg: #fff3ea;
+  --result-ink: #b23a1c;
+
+  --toast-bg: #33241c;
+  --toast-ink: #ffffff;
+
+  --dialog-bg: #fffdfb;
+  --dialog-ink: #33241c;
+  --dialog-line: #f3ddcd;
+  --dialog-backdrop: rgb(60 35 20 / 50%);
+
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+}
+
+body[data-theme="summer"][data-color-scheme="dark"] {
+  color-scheme: dark;
+
+  --brand: #ff8a5c;
+  --brand-strong: #ffa479;
+  --brand-soft: rgb(255 138 92 / 17%);
+  --brand-gradient: linear-gradient(180deg, #ff9d6b, #e2542a);
+
+  --bg: #201813;
+  --surface: #291f19;
+  --surface-soft: #33261f;
+  --surface-selected: #413026;
+
+  --ink: #fff3ea;
+  --ink-soft: #c4a795;
+  --ink-inverse: #201813;
+
+  --line: #46352c;
+  --line-strong: #5d463a;
+
+  --success: #4ade80;
+  --success-soft: rgb(74 222 128 / 16%);
+  --warning: #fbbf24;
+  --warning-soft: rgb(251 191 36 / 16%);
+  --danger: #f87171;
+  --danger-soft: rgb(248 113 113 / 16%);
+
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 35%);
+  --shadow-md: 0 10px 28px rgb(0 0 0 / 45%);
+
+  --shadow-focus:
+    0 0 0 3px rgb(255 138 92 / 20%),
+    0 14px 34px rgb(0 0 0 / 45%);
+
+  --control-bg: #33261f;
+  --control-ink: #fff3ea;
+  --control-line: #46352c;
+
+  --button-bg: #33261f;
+  --button-ink: #fff3ea;
+  --button-line: #46352c;
+  --button-hover-bg: #413026;
+  --button-hover-ink: #ff8a5c;
+  --button-hover-line: #7a4c37;
+  --button-active-bg: #4d382b;
+  --button-active-ink: #ffa479;
+  --button-active-line: #ff8a5c;
+
+  --button-primary-bg: linear-gradient(180deg, #ff9d6b, #e2542a);
+  --button-primary-ink: #ffffff;
+  --button-primary-line: #b23a1c;
+  --button-primary-hover-bg: linear-gradient(180deg, #ff8a55, #d54d24);
+  --button-primary-hover-ink: #ffffff;
+  --button-primary-hover-line: #a33518;
+  --button-primary-active-bg: linear-gradient(180deg, #d54d24, #b23a1c);
+  --button-primary-active-ink: #ffffff;
+  --button-primary-active-line: #8f2c14;
+
+  --checkbox-bg: #33261f;
+  --checkbox-line: #5d463a;
+  --checkbox-active-bg: #ff8a5c;
+  --checkbox-active-line: #ffa479;
+  --checkbox-active-mark: #201813;
+
+  --card-bg: #291f19;
+  --card-line: #46352c;
+  --card-selected-bg: #413026;
+  --card-selected-line: #ff8a5c;
+
+  --display-bg: #33261f;
+  --display-ink: #fff3ea;
+  --display-preview-ink: #ffb08c;
+  --display-line: #46352c;
+
+  --result-bg: #33261f;
+  --result-ink: #ffb08c;
+
+  --toast-bg: #fff3ea;
+  --toast-ink: #201813;
+
+  --dialog-bg: #291f19;
+  --dialog-ink: #fff3ea;
+  --dialog-line: #46352c;
+  --dialog-backdrop: rgb(0 0 0 / 60%);
+
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+}

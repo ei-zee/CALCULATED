@@ -1,0 +1,192 @@
+/* ============================================================
+   Общая база кнопок
+   ============================================================ */
+
+:is(.ui-button, .radio-btn) {
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap, 8px);
+
+  min-width: 0;
+  min-height: var(--control-height);
+
+  margin: 0;
+  padding: 0 var(--button-padding-x, 14px);
+
+  color: var(--button-ink);
+  background: var(--button-bg);
+  border: 1px solid var(--button-line);
+  border-radius: var(--button-radius, var(--control-radius));
+
+  font: inherit;
+  font-size: var(--button-font-size, 14px);
+  font-weight: var(--button-font-weight, 800);
+  line-height: 1.2;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+:is(.ui-button, .radio-btn):focus-visible {
+  outline: 2px solid var(--button-focus-ink, var(--brand));
+  outline-offset: 2px;
+}
+
+:is(.ui-button, .radio-btn):disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  :is(.ui-button, .radio-btn):hover:not(:disabled) {
+    color: var(--button-hover-ink, var(--brand));
+    background: var(--button-hover-bg, var(--surface-selected));
+    border-color: var(--button-hover-line, var(--brand));
+  }
+}
+
+:is(.ui-button, .radio-btn):active:not(:disabled) {
+  color: var(--button-active-ink, var(--button-ink));
+  background: var(--button-active-bg, var(--surface-selected));
+  border-color: var(--button-active-line, var(--brand));
+
+  transform: scale(var(--button-active-scale, 0.98));
+}
+
+/* ============================================================
+   Основная кнопка
+   ============================================================ */
+
+:is(.ui-button--primary, .radio-btn) {
+  color: var(--button-primary-ink);
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-line);
+}
+
+@media (hover: hover) {
+  :is(.ui-button--primary, .radio-btn):hover:not(:disabled) {
+    color: var(
+      --button-primary-hover-ink,
+      var(--button-primary-ink)
+    );
+
+    background: var(
+      --button-primary-hover-bg,
+      var(--button-primary-bg)
+    );
+
+    border-color: var(
+      --button-primary-hover-line,
+      var(--button-primary-line)
+    );
+  }
+}
+
+:is(.ui-button--primary, .radio-btn):active:not(:disabled) {
+  color: var(
+    --button-primary-active-ink,
+    var(--button-primary-ink)
+  );
+
+  background: var(
+    --button-primary-active-bg,
+    var(--button-primary-bg)
+  );
+
+  border-color: var(
+    --button-primary-active-line,
+    var(--button-primary-line)
+  );
+}
+
+/* ============================================================
+   Опасное действие
+   ============================================================ */
+
+.ui-button--danger {
+  color: var(--button-danger-ink, var(--danger));
+  background: var(--button-danger-bg, var(--danger-soft));
+  border-color: var(--button-danger-line, transparent);
+}
+
+@media (hover: hover) {
+  .ui-button--danger:hover:not(:disabled) {
+    color: var(--button-danger-hover-ink, var(--ink-inverse));
+    background: var(--button-danger-hover-bg, var(--danger));
+    border-color: var(--button-danger-hover-line, var(--danger));
+  }
+}
+
+.ui-button--danger:active:not(:disabled) {
+  color: var(--button-danger-active-ink, var(--ink-inverse));
+  background: var(--button-danger-active-bg, var(--danger));
+  border-color: var(--button-danger-active-line, var(--danger));
+}
+
+/* ============================================================
+   Размеры
+   ============================================================ */
+
+.ui-button--small {
+  min-height: var(--control-height-small);
+  padding: 0 10px;
+
+  font-size: 12px;
+}
+
+.ui-button--icon {
+  flex: 0 0 auto;
+
+  width: var(--control-height);
+  padding: 0;
+}
+
+.ui-button--icon.ui-button--small {
+  width: var(--control-height-small);
+}
+
+/* ============================================================
+   Содержимое
+   ============================================================ */
+
+.ui-button__icon {
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ui-button__text {
+  min-width: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-button__text:empty {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.ui-button, .radio-btn) {
+    transition: none;
+    transform: none;
+  }
+}

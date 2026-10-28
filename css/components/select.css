@@ -1,0 +1,95 @@
+/* ============================================================
+   Селект
+   ============================================================ */
+
+.ui-select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-sizing: border-box;
+
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: var(--control-height);
+  min-height: var(--control-height);
+
+  margin: 0;
+  padding: 0 var(--select-arrow-space, 34px) 0 var(--select-padding-x, 12px);
+
+  color: var(--select-ink, var(--control-ink));
+  background:
+    var(--select-arrow) no-repeat right var(--select-arrow-offset, 12px) center / 12px,
+    var(--select-bg, var(--control-bg));
+
+  border: 1px solid var(--select-line, var(--control-line));
+  border-radius: var(--select-radius, var(--control-radius));
+
+  font: inherit;
+  font-size: var(--select-font-size, 13px);
+  font-weight: var(--select-font-weight, 700);
+  line-height: 1.2;
+
+  text-overflow: ellipsis;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ui-select:focus-visible {
+  outline: none;
+
+  border-color: var(--select-focus-line, var(--brand));
+  box-shadow: var(--select-focus-ring, var(--control-focus-ring));
+}
+
+.ui-select:disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+.ui-select option {
+  color: var(--select-option-ink, var(--ink));
+  background: var(--select-option-bg, var(--surface));
+}
+
+/* ============================================================
+   Компактный селект
+   ============================================================ */
+
+.ui-select--compact {
+  height: var(--control-height-small);
+  min-height: var(--control-height-small);
+
+  padding-right: var(--select-compact-arrow-space, 30px);
+
+  font-size: var(--select-compact-font-size, 12px);
+}
+
+/* ============================================================
+   Мобильный режим
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .ui-select {
+    height: var(--select-mobile-height, 40px);
+    min-height: var(--select-mobile-height, 40px);
+
+    padding-left: var(--select-mobile-padding-x, 10px);
+    padding-right: var(--select-mobile-arrow-space, 30px);
+
+    font-size: var(--select-mobile-font-size, 12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-select {
+    transition: none;
+  }
+}

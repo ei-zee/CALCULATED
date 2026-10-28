@@ -1,0 +1,275 @@
+.car-trip {
+  container-type: inline-size;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 8px;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.car-trip__form {
+  display: grid;
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.car-trip__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.car-trip__row--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.car-trip__row--distance {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.car-trip__row[hidden] {
+  display: none;
+}
+
+.car-trip .ui-field {
+  min-width: 0;
+  gap: 3px;
+}
+
+.car-trip .ui-field__label {
+  min-width: 0;
+  padding: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 800;
+
+  white-space: normal;
+  overflow: visible;
+}
+
+.car-trip .ui-number {
+  height: clamp(34px, 9cqw, 40px);
+  min-height: clamp(34px, 9cqw, 40px);
+
+  padding: 0 9px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.car-trip .ui-checkbox {
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  width: auto;
+  min-width: 0;
+  height: clamp(34px, 9cqw, 40px);
+
+  margin: 0;
+  padding: 0 9px;
+
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius);
+
+  font: inherit;
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.car-trip .ui-checkbox:hover {
+  border-color: var(--brand);
+}
+
+.car-trip .ui-checkbox:focus-within {
+  border-color: var(--brand);
+  box-shadow: var(--control-focus-ring);
+}
+
+.car-trip .ui-checkbox__input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.car-trip .ui-checkbox__mark {
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  min-width: var(--checkbox-size);
+  min-height: var(--checkbox-size);
+
+  color: transparent;
+  background: var(--checkbox-bg);
+  border: 1px solid var(--checkbox-line);
+  border-radius: var(--checkbox-radius, var(--radius-xs));
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.car-trip .ui-checkbox__input:checked + .ui-checkbox__mark {
+  color: var(--checkbox-active-mark);
+  background: var(--checkbox-active-bg);
+  border-color: var(--checkbox-active-line);
+}
+
+.car-trip .ui-checkbox__input:checked + .ui-checkbox__mark::before {
+  content: "✓";
+
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.car-trip .ui-checkbox__text {
+  min-width: 0;
+
+  color: var(--ink);
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.car-trip .ui-segmented__button {
+  min-height: clamp(28px, 7cqw, 32px);
+
+  padding: 3px 8px;
+
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.car-trip__output {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 12px;
+
+  min-width: 0;
+  margin-top: 2px;
+  padding-top: 8px;
+
+  border-top: 1px solid var(--line);
+}
+
+.car-trip__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.car-trip__metric-label {
+  min-width: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 800;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.car-trip__metric-value {
+  min-width: 0;
+
+  color: var(--result-ink);
+
+  font-size: clamp(13px, 3.6cqw, 15px);
+  line-height: 1.3;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+
+  overflow-wrap: anywhere;
+}
+
+.car-trip__message {
+  grid-column: 1 / -1;
+
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.car-trip__message[hidden] {
+  display: none;
+}
+
+@container (max-width: 340px) {
+  .car-trip {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .car-trip__form {
+    gap: 5px;
+  }
+
+  .car-trip__row {
+    gap: 5px;
+  }
+
+  .car-trip__output {
+    column-gap: 8px;
+    padding-top: 6px;
+  }
+
+  .car-trip .ui-field__label {
+    font-size: 9px;
+  }
+
+  .car-trip .ui-checkbox__text {
+    font-size: 10px;
+  }
+}

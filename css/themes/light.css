@@ -1,0 +1,88 @@
+body[data-theme="light"] {
+  color-scheme: light;
+
+  --brand: #0077ff;
+  --brand-strong: #0059c9;
+  --brand-soft: rgb(0 119 255 / 14%);
+
+  --brand-gradient: linear-gradient(180deg, #3d9bff, #0077ff);
+
+  --bg: #edf2f7;
+  --surface: #ffffff;
+  --surface-soft: #f6f9fc;
+  --surface-selected: #e7f1ff;
+
+  --ink: #17212b;
+  --ink-soft: #6b7885;
+  --ink-inverse: #ffffff;
+
+  --line: #dfe6ee;
+  --line-strong: #c8d3df;
+
+  --success: #1f8a4c;
+  --success-soft: rgb(31 138 76 / 14%);
+
+  --warning: #b7791f;
+  --warning-soft: rgb(183 121 31 / 14%);
+
+  --danger: #d64545;
+  --danger-soft: rgb(214 69 69 / 14%);
+
+  --shadow-sm: 0 2px 8px rgb(23 33 43 / 6%);
+  --shadow-md: 0 10px 28px rgb(23 33 43 / 8%);
+
+  --control-bg: #f6f9fc;
+  --control-ink: #17212b;
+  --control-line: #dfe6ee;
+
+  --button-bg: #f6f9fc;
+  --button-ink: #17212b;
+  --button-line: #dfe6ee;
+
+  --button-hover-bg: #e7f1ff;
+  --button-hover-ink: #0077ff;
+  --button-hover-line: #9ecbff;
+
+  --button-active-bg: #d8e9ff;
+  --button-active-ink: #0059c9;
+  --button-active-line: #0077ff;
+
+  --button-primary-bg: linear-gradient(180deg, #3d9bff, #0077ff);
+  --button-primary-ink: #ffffff;
+  --button-primary-line: #0059c9;
+
+  --button-primary-hover-bg: linear-gradient(180deg, #2f8fff, #0068e6);
+  --button-primary-hover-ink: #ffffff;
+  --button-primary-hover-line: #004db3;
+
+  --button-primary-active-bg: linear-gradient(180deg, #0068e6, #0059c9);
+  --button-primary-active-ink: #ffffff;
+  --button-primary-active-line: #004db3;
+
+  --checkbox-bg: #ffffff;
+  --checkbox-line: #c8d3df;
+  --checkbox-active-bg: #0077ff;
+  --checkbox-active-line: #0059c9;
+  --checkbox-active-mark: #ffffff;
+
+  --card-bg: #ffffff;
+  --card-line: #dfe6ee;
+  --card-selected-bg: #e7f1ff;
+  --card-selected-line: #0077ff;
+
+  --display-bg: #f2f8ff;
+  --display-ink: #17212b;
+  --display-preview-ink: #00427f;
+  --display-line: #dfe6ee;
+
+  --result-bg: #f2f8ff;
+  --result-ink: #00427f;
+
+  --toast-bg: #17212b;
+  --toast-ink: #ffffff;
+
+  --dialog-bg: #ffffff;
+  --dialog-ink: #17212ba9;
+  --dialog-line: #dfe6ee;
+  --dialog-backdrop: rgb(15 25 40 / 50%);
+}

@@ -1,0 +1,203 @@
+.game.simon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  gap: 16px;
+  padding: 12px;
+}
+
+
+.simon-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 24px;
+  min-width: 0;
+
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+.simon-pad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 0;
+
+  gap: 12px;
+  padding: 12px;
+
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+
+.simon-pad {
+  appearance: none;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  opacity: 0.62;
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.16s ease,
+    box-shadow 0.22s ease,
+    filter 0.18s ease;
+}
+
+
+.simon-pad:disabled {
+  cursor: default;
+}
+
+
+.simon-green {
+  background: #34d399;
+}
+
+.simon-red {
+  background: #f87171;
+}
+
+.simon-yellow {
+  background: #fbbf24;
+}
+
+.simon-blue {
+  background: #60a5fa;
+}
+
+
+.simon-pad.active {
+  opacity: 1;
+  transform: scale(1.045);
+  filter: saturate(1.15);
+}
+
+
+.simon-green.active {
+  box-shadow:
+    0 0 0 3px rgba(52, 211, 153, 0.28),
+    0 0 22px rgba(52, 211, 153, 0.32);
+}
+
+.simon-red.active {
+  box-shadow:
+    0 0 0 3px rgba(248, 113, 113, 0.28),
+    0 0 22px rgba(248, 113, 113, 0.3);
+}
+
+.simon-yellow.active {
+  box-shadow:
+    0 0 0 3px rgba(251, 191, 36, 0.3),
+    0 0 22px rgba(251, 191, 36, 0.3);
+}
+
+.simon-blue.active {
+  box-shadow:
+    0 0 0 3px rgba(96, 165, 250, 0.3),
+    0 0 22px rgba(96, 165, 250, 0.32);
+}
+
+
+.simon-start {
+  appearance: none;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 40px;
+
+  margin: 0;
+  padding: 9px 24px;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+@media (hover: hover) {
+  .simon-pad:not(:disabled):hover {
+    opacity: 0.82;
+  }
+
+  .simon-start:hover {
+    background: var(--surface-soft);
+    border-color: var(--vk);
+  }
+}
+
+
+.simon-pad:active {
+  transform: scale(0.98);
+}
+
+
+.simon-pad:focus-visible,
+.simon-start:focus-visible {
+  outline: 2px solid var(--vk);
+  outline-offset: -3px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .simon-pad {
+    transition: none !important;
+    transform: none !important;
+  }
+}

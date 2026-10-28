@@ -1,0 +1,57 @@
+## Getting started
+
+CalcHub lets you use two calculators at the same time.
+
+The active slot receives keyboard input. Click a slot or use shortcuts to activate it.
+
+## Keyboard
+
+### Numbers and operators
+
+Numbers, brackets, and operators are sent to the active calculator.
+
+### Enter
+
+Calculates the active calculator.
+
+Shortcut: Enter
+
+### Backspace
+
+Removes the last character in the basic calculator.
+
+Shortcut: Backspace
+
+### Delete
+
+Clears the basic calculator.
+
+Shortcut: Delete
+
+## Slots
+
+### Switching
+
+Ctrl + Alt + Left Arrow — activate slot A.
+
+Ctrl + Alt + Right Arrow — activate slot B.
+
+Ctrl + Alt + S — switch the active slot.
+
+### Transfer result
+
+Ctrl + Alt + V — transfer the active slot result to the other slot.
+
+## Interface
+
+### Space
+
+Turns the radio on or off.
+
+Shortcut: Space
+
+### Help
+
+Opens help.
+
+Shortcut: F1

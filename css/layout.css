@@ -1,0 +1,203 @@
+/* ============================================================
+   Приложение
+   ============================================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-gap, 16px);
+
+  width: 100%;
+  max-width: var(--app-max-width, 1320px);
+  height: 100dvh;
+  min-height: 0;
+
+  margin: 0 auto;
+  padding: var(--app-padding, 20px);
+}
+
+.header {
+  flex: 0 0 auto;
+}
+
+.workspace {
+  flex: 1 1 0;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    var(--system-panel-width, 64px)
+    minmax(0, 1fr);
+  gap: var(--workspace-gap, 16px);
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ============================================================
+   Слоты
+   ============================================================ */
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--slot-gap, 10px);
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: var(--slot-padding, 12px);
+
+  overflow: hidden;
+}
+
+.slot-body {
+  display: contents;
+}
+
+.slot-summary {
+  display: none;
+}
+
+.block-picker {
+  flex: 0 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.25fr);
+  gap: var(--picker-gap, 8px);
+
+  min-width: 0;
+}
+
+/* ============================================================
+   Контейнер модуля
+   Без декоративных рамок и вложенных поверхностей
+   ============================================================ */
+
+.block-calc,
+.calc-mount,
+.module-host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+}
+
+.block-calc,
+.calc-mount {
+  flex: 1 1 0;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.calc-mount,
+.module-host {
+  width: 100%;
+}
+
+.module-host {
+  flex: 1 1 0;
+}
+
+.block-calc {
+  background: transparent;
+  border: 0;
+}
+
+.calc-mount {
+  background: transparent;
+  border: 0;
+}
+
+.calc-mount:has(.mount-placeholder) {
+  display: grid;
+  place-items: center;
+}
+
+/* ============================================================
+   Системная панель
+   ============================================================ */
+
+.system-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--system-panel-gap, 12px);
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 10px 0;
+}
+
+.system-divider {
+  flex: 0 0 auto;
+
+  width: 22px;
+  height: 1px;
+}
+
+/* ============================================================
+   Полный экран
+   ============================================================ */
+
+body[data-screen="fullscreen"] {
+  overflow: hidden;
+}
+
+body[data-screen="fullscreen"] .app {
+  max-width: none;
+}
+
+/* ============================================================
+   Компактный desktop
+   ============================================================ */
+
+@media (max-height: 700px) and (min-width: 761px) {
+  .app {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .workspace {
+    gap: 10px;
+  }
+
+  .slot {
+    gap: 8px;
+    padding: 10px;
+  }
+}
+/* ============================================================
+   Модули: единое поведение высоты
+   ============================================================ */
+
+.module-host > :first-child {
+  flex: 0 0 auto;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Десктоп: у слота есть рабочая высота */
+@media (min-width: 761px) {
+  .module-host > :first-child {
+    flex: 1 1 0;
+  }
+}
+
+/* Мобильный fullscreen: высота фиксированная */
+body[data-screen="fullscreen"] .module-host > :first-child {
+  flex: 1 1 0;
+}

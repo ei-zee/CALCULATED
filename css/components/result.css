@@ -1,0 +1,195 @@
+.ui-result {
+  box-sizing: border-box;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: var(--result-gap, 10px);
+
+  width: 100%;
+  min-width: 0;
+  min-height: var(--result-panel-min-height);
+
+  margin: 0;
+  padding: var(--result-panel-padding);
+
+  color: var(--result-ink);
+  background: var(--result-bg);
+  border: 1px solid var(--result-line, var(--line));
+  border-radius: var(--result-radius, var(--radius-md));
+}
+
+.ui-result__main {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.ui-result__label {
+  min-width: 0;
+
+  color: var(--result-label-ink, var(--ink-soft));
+
+  font-size: var(--result-label-size, 10px);
+  font-weight: 900;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-result__value {
+  min-width: 0;
+
+  font-size: var(--result-value-size);
+  font-weight: 900;
+  line-height: 1.15;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-result__actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: var(--result-actions-gap, 6px);
+}
+
+.ui-result__button {
+  flex: 0 0 auto;
+
+  width: var(--result-action-size);
+  height: var(--result-action-size);
+  min-height: var(--result-action-size);
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--result-button-ink, var(--result-ink));
+  background: var(--result-button-bg, transparent);
+  border: 1px solid var(--result-button-line, transparent);
+  border-radius: var(--result-button-radius, var(--radius-sm));
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.ui-result__button:focus-visible {
+  outline: 2px solid var(--result-button-focus-ink, var(--brand));
+  outline-offset: 2px;
+}
+
+.ui-result__button:disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  .ui-result__button:hover:not(:disabled) {
+    color: var(--result-button-hover-ink, var(--brand));
+    background: var(--result-button-hover-bg, var(--surface-selected));
+    border-color: var(--result-button-hover-line, var(--brand));
+  }
+}
+
+.ui-result__button:active:not(:disabled) {
+  color: var(--result-button-active-ink, var(--brand));
+  background: var(--result-button-active-bg, var(--surface-selected));
+  border-color: var(--result-button-active-line, var(--brand));
+}
+
+/* Компактный режим */
+
+.ui-result--compact {
+  min-height: var(--result-panel-compact-min-height);
+
+  padding: var(--result-panel-compact-padding);
+  gap: var(--result-compact-gap, 8px);
+}
+
+.ui-result--compact .ui-result__value {
+  font-size: var(--result-value-compact-size);
+}
+
+.ui-result--compact .ui-result__button {
+  width: var(--result-action-compact-size);
+  height: var(--result-action-compact-size);
+  min-height: var(--result-action-compact-size);
+}
+
+/* Узкий режим */
+
+.ui-result--narrow {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--result-narrow-gap, 6px);
+
+  min-height: var(--result-panel-compact-min-height);
+
+  padding: var(--result-panel-compact-padding);
+}
+
+.ui-result--narrow .ui-result__main {
+  order: 2;
+}
+
+.ui-result--narrow .ui-result__actions {
+  order: 1;
+
+  justify-content: flex-end;
+}
+
+.ui-result--narrow .ui-result__value {
+  font-size: var(--result-value-narrow-size);
+}
+
+.ui-result--narrow .ui-result__button {
+  width: var(--result-action-narrow-size);
+  height: var(--result-action-narrow-size);
+  min-height: var(--result-action-narrow-size);
+}
+
+/* Мобильный режим */
+
+@media (max-width: 760px) {
+  .ui-result {
+    min-height: var(--result-mobile-min-height, 56px);
+
+    padding: var(--result-mobile-padding, 7px 9px);
+    gap: var(--result-mobile-gap, 8px);
+  }
+
+  .ui-result__value {
+    font-size: var(--result-mobile-value-size, 20px);
+  }
+
+  .ui-result__button {
+    width: var(--result-mobile-action-size, 34px);
+    height: var(--result-mobile-action-size, 34px);
+    min-height: var(--result-mobile-action-size, 34px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-result__button {
+    transition: none;
+  }
+}

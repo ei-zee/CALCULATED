@@ -1,0 +1,267 @@
+/* ============================================================
+   НОЛЬ — базовые токены.
+   Цвета и характер оформления задают файлы css/themes/*.css.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Типографика */
+
+  --font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Roboto,
+    Arial,
+    sans-serif;
+
+  --font-size: 14px;
+
+  /* Бренд */
+
+  --brand: #0077ff;
+  --brand-strong: #0059c9;
+  --brand-soft: rgb(0 119 255 / 14%);
+  --brand-gradient: linear-gradient(180deg, #3d9bff, #0077ff);
+
+  /* Поверхности */
+
+  --bg: #edf2f7;
+  --surface: #ffffff;
+  --surface-soft: #f6f9fc;
+  --surface-selected: #e7f1ff;
+
+  /* Текст */
+
+  --ink: #17212b;
+  --ink-soft: #6b7885;
+  --ink-inverse: #ffffff;
+
+  /* Границы */
+
+  --line: #dfe6ee;
+  --line-strong: #c8d3df;
+
+  /* Состояния */
+
+  --success: #1f8a4c;
+  --success-soft: rgb(31 138 76 / 14%);
+  --warning: #b7791f;
+  --warning-soft: rgb(183 121 31 / 14%);
+  --danger: #d64545;
+  --danger-soft: rgb(214 69 69 / 14%);
+  --disabled-opacity: 0.55;
+
+  /* Размеры и форма */
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+
+  /* Тени */
+
+  --shadow-sm: 0 2px 8px rgb(23 33 43 / 6%);
+  --shadow-md: 0 10px 28px rgb(23 33 43 / 8%);
+
+  --shadow-focus:
+    0 0 0 3px rgb(0 119 255 / 16%),
+    0 14px 34px rgb(0 119 255 / 14%);
+
+  /* Контролы */
+
+  --control-height: 42px;
+  --control-height-small: 36px;
+  --control-radius: 12px;
+
+  --control-bg: var(--surface-soft);
+  --control-ink: var(--ink);
+  --control-line: var(--line);
+
+  --control-focus-ring: 0 0 0 4px var(--brand-soft);
+
+  /* Кнопки */
+
+  --button-bg: var(--surface-soft);
+  --button-ink: var(--ink);
+  --button-line: var(--line);
+
+  --button-primary-bg: var(--brand-gradient);
+  --button-primary-ink: var(--ink-inverse);
+  --button-primary-line: var(--brand-strong);
+
+  /* Чекбокс */
+
+  --checkbox-size: 22px;
+  --checkbox-bg: var(--surface);
+  --checkbox-line: var(--line-strong);
+
+  --checkbox-active-bg: var(--brand);
+  --checkbox-active-line: var(--brand-strong);
+  --checkbox-active-mark: var(--ink-inverse);
+
+  /* Карточки */
+
+  --card-bg: var(--surface);
+  --card-line: var(--line);
+  --card-selected-bg: var(--surface-selected);
+  --card-selected-line: var(--brand);
+
+  /* Дисплей */
+
+  --display-bg: #f2f8ff;
+  --display-ink: var(--ink);
+  --display-preview-ink: #00427f;
+  --display-line: var(--line);
+
+  /* Заметки и статусы */
+
+  --note-bg: var(--surface-soft);
+  --note-ink: var(--ink-soft);
+  --note-line: var(--line);
+
+  --status-bg: var(--surface-soft);
+  --status-ink: var(--ink);
+  --status-line: var(--line);
+
+  /* Результат */
+
+  --result-bg: #f2f8ff;
+  --result-ink: #00427f;
+
+  --result-panel-min-height: 64px;
+  --result-panel-compact-min-height: 58px;
+
+  --result-panel-padding: 8px 10px;
+  --result-panel-compact-padding: 7px 9px;
+
+  --result-action-size: 38px;
+  --result-action-compact-size: 36px;
+  --result-action-narrow-size: 34px;
+
+  --result-value-size: 26px;
+  --result-value-compact-size: 22px;
+  --result-value-narrow-size: 20px;
+
+  /* Уведомления и диалоги */
+
+  --toast-bg: #17212b;
+  --toast-ink: #ffffff;
+  --dialog-backdrop: rgb(15 25 40 / 50%);
+
+  /* Геометрия приложения */
+
+  --app-max-width: 1320px;
+  --app-padding: 20px;
+  --app-gap: 16px;
+
+  --workspace-gap: 16px;
+  --system-panel-width: 64px;
+  --system-panel-gap: 12px;
+
+  --slot-gap: 10px;
+  --slot-padding: 12px;
+  --picker-gap: 8px;
+
+  /* Эффекты тем */
+
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  min-width: 320px;
+  min-height: 100%;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 1.45;
+
+  color: var(--ink);
+  background: var(--bg);
+
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: var(--ink-inverse);
+  background: var(--brand);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: var(--radius-pill);
+}
+
+body[data-app-state="loading"] {
+  cursor: progress;
+}
+
+body[data-app-state="error"] {
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

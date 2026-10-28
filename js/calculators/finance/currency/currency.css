@@ -1,0 +1,272 @@
+.currency {
+  container-type: inline-size;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 8px;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+/* Дисплей — той же геометрии, что у стандартного */
+.currency__display {
+  flex: 0 0 auto;
+
+  min-height: 86px;
+}
+
+.currency__amount {
+  min-width: 0;
+}
+
+.currency__amount input {
+  width: 100%;
+  min-width: 0;
+
+  color: var(--display-ink);
+  background: transparent;
+  border: 0;
+
+  caret-color: transparent;
+
+  font-size: clamp(22px, 6cqw, 34px);
+  font-weight: 900;
+  line-height: 1.15;
+
+  text-align: right;
+}
+
+.currency__amount input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.currency__preview {
+  min-height: 18px;
+
+  color: var(--display-preview-ink);
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currency__preview:empty {
+  display: block;
+}
+
+/* Кросс-курс: строка информации, а не отдельная карточка */
+.currency__cross {
+  flex: 0 0 auto;
+
+  min-height: 18px;
+
+  padding: 0;
+
+  color: var(--ink-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.currency__cross .ui-note__icon {
+  display: none;
+}
+
+.currency__cross-text {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+.currency__currencies {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+  align-items: start;
+  gap: 6px;
+
+  min-width: 0;
+}
+.currency__swap {
+  flex: 0 0 auto;
+
+  align-self: start;
+
+  width: 38px;
+  height: 38px;
+  min-height: 38px;
+
+  /* Кнопка 38px центрируется относительно селекта 40px */
+  margin-top: 1px;
+}
+
+.currency__field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.currency__select {
+  width: 100%;
+  min-width: 0;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.currency__field-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.currency__field-label {
+  min-width: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currency__rub {
+  min-width: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currency__swap {
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+  min-height: 38px;
+}
+
+.currency__footer {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+
+  margin-top: auto;
+}
+
+.currency__source {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.currency__source-select {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  font-size: 11px;
+}
+
+.currency__help {
+  flex: 0 0 auto;
+
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+}
+
+.currency__source-info {
+  min-width: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+@container (max-width: 340px) {
+  .currency {
+    padding: 6px;
+    gap: 6px;
+  }
+  /* Десктоп: модуль занимает доступную высоту слота */
+@media (min-width: 761px) {
+  .currency {
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .currency__footer {
+    margin-top: auto;
+  }
+}
+
+/* Мобильный fullscreen: слот имеет фиксированную высоту */
+body[data-screen="fullscreen"] .currency {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+body[data-screen="fullscreen"] .currency__footer {
+  margin-top: auto;
+}
+
+  .currency__currencies {
+    gap: 5px;
+  }
+
+  .currency__swap {
+    width: 34px;
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .currency__display {
+    min-height: 74px;
+  }
+}

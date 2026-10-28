@@ -1,0 +1,406 @@
+/* ============================================================
+   Конвертер длины
+   ============================================================ */
+
+.conv {
+  container-type: inline-size;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ============================================================
+   Дисплей
+   ============================================================ */
+
+.conv .conv-display {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 86px;
+
+  padding: 10px 12px;
+
+  color: var(--ink);
+  background: var(--result-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+
+  overflow: hidden;
+}
+
+.conv .conv-input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.conv .conv-unit-chip {
+  flex: 0 0 auto;
+
+  min-width: 0;
+}
+
+.conv .conv-unit-chip .ui-select {
+  min-width: 74px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.conv .keypad-expression {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  color: var(--display-ink);
+
+  font-size: clamp(22px, 6cqw, 34px);
+  font-weight: 900;
+  line-height: 1.15;
+
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv .keypad-preview {
+  flex: 0 0 auto;
+
+  min-height: 24px;
+
+  color: var(--result-ink);
+
+  font-size: clamp(16px, 4.5cqw, 24px);
+  font-weight: 900;
+  line-height: 24px;
+
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv .keypad-preview:empty {
+  display: block;
+}
+
+/* ============================================================
+   Группы единиц
+   ============================================================ */
+
+.conv .conv-tabs {
+  flex: 0 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.conv .conv-tab {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+
+  margin: 0;
+  padding: 6px 8px;
+
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.conv .conv-tab.active {
+  color: var(--brand);
+  background: var(--surface-selected);
+  border-color: var(--brand);
+}
+
+@media (hover: hover) {
+  .conv .conv-tab:hover:not(.active) {
+    color: var(--brand);
+    background: var(--surface-selected);
+    border-color: var(--brand);
+  }
+}
+
+.conv .conv-tab:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Список единиц
+   ============================================================ */
+
+.conv .conv-list {
+  flex: 0 0 auto;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: visible;
+}
+
+.conv .conv-group-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+
+  align-content: start;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.conv .conv-row {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 8px 10px;
+
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.conv .conv-row.selected {
+  color: var(--brand);
+  background: var(--surface-selected);
+  border-color: var(--brand);
+}
+
+@media (hover: hover) {
+  .conv .conv-row:hover:not(.selected) {
+    color: var(--brand);
+    background: var(--surface-selected);
+    border-color: var(--brand);
+  }
+}
+
+.conv .conv-row:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -3px;
+}
+
+.conv .conv-unit {
+  display: block;
+
+  max-width: 100%;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+}
+
+.conv .conv-value {
+  display: block;
+
+  max-width: 100%;
+
+  color: var(--ink);
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+
+  overflow-wrap: anywhere;
+}
+
+.conv .conv-row.selected .conv-value {
+  color: var(--brand);
+}
+
+/* ============================================================
+   Формула / подсказка
+   ============================================================ */
+
+.conv .conv-notice {
+  flex: 0 0 auto;
+
+  min-width: 0;
+
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.45;
+
+  text-align: center;
+
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Десктоп: конвертер заполняет высоту слота
+   ============================================================ */
+
+@media (min-width: 761px) {
+  .conv {
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .conv .conv-list {
+    flex: 1 1 0;
+    min-height: 0;
+
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}
+
+/* ============================================================
+   Мобильный fullscreen: тоже заполняет высоту
+   ============================================================ */
+
+body[data-screen="fullscreen"] .conv {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+body[data-screen="fullscreen"] .conv .conv-list {
+  flex: 1 1 0;
+  min-height: 0;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* ============================================================
+   Узкий контейнер
+   ============================================================ */
+
+@container (max-width: 340px) {
+  .conv {
+    gap: 7px;
+  }
+
+  .conv .conv-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .conv .conv-tab {
+    width: 100%;
+    min-height: 32px;
+
+    padding: 6px;
+
+    font-size: 10px;
+  }
+
+  .conv .conv-group-items {
+    gap: 5px;
+  }
+
+  .conv .conv-row {
+    padding: 7px 8px;
+  }
+
+  .conv .conv-unit {
+    font-size: 9px;
+  }
+
+  .conv .conv-value {
+    font-size: 12px;
+  }
+
+  .conv .conv-notice {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conv .conv-tab,
+  .conv .conv-row {
+    transition: none;
+  }
+}
+/* На широком контейнере группы снова в одну строку */
+@container (min-width: 521px) {
+  .conv .conv-tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .conv .conv-tab {
+    width: auto;
+
+    padding: 6px 12px;
+  }
+}

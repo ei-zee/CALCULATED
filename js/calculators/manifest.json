@@ -1,0 +1,313 @@
+{
+  "version": 2,
+  "categories": [
+    {
+      "id": "basic",
+      "title": {
+        "ru": "Стандартные",
+        "en": "Basic"
+      },
+      "calculators": [
+        "standard"
+      ]
+    },
+    {
+      "id": "converters",
+      "title": {
+        "ru": "Конвертеры",
+        "en": "Converters"
+      },
+      "calculators": [
+        "area",
+        "length",
+        "mass",
+        "pressure",
+        "temperature",
+        "volume"
+      ]
+    },
+    {
+      "id": "finance",
+      "title": {
+        "ru": "Финансы",
+        "en": "Finance"
+      },
+      "calculators": [
+        "currency"
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": {
+        "ru": "Геометрия",
+        "en": "Geometry"
+      },
+      "calculators": [
+        "area-shape"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "title": {
+        "ru": "Кухня",
+        "en": "Kitchen",
+        "es": "Cocina",
+        "fr": "Cuisine",
+        "de": "Küche",
+        "zh": "厨房"
+      },
+      "calculators": [
+        "kitchen-ingredients"
+      ]
+    },
+    {
+      "id": "cars",
+      "title": {
+        "ru": "Машины",
+        "en": "Cars"
+      },
+      "calculators": [
+        "car-trip"
+      ]
+    },
+    {
+      "id": "entertainment",
+      "title": {
+        "ru": "Развлечения",
+        "en": "Entertainment"
+      },
+      "calculators": [
+        "dots",
+        "memory",
+        "simon",
+        "tic-tac-toe"
+      ]
+    }
+  ],
+  "calculators": {
+    "standard": {
+      "category": "basic",
+      "title": {
+        "ru": "Стандартный",
+        "en": "Basic"
+      },
+      "module": "./basic/standard/calculator.js",
+      "meta": "./basic/standard/meta.js",
+      "styles": [
+        "./basic/standard/standard.css"
+      ]
+    },
+    "car-trip": {
+      "category": "cars",
+      "title": {
+        "ru": "Поездка",
+        "en": "Trip"
+      },
+      "module": "./cars/car-trip/calculator.js",
+      "meta": "./cars/car-trip/meta.js",
+      "styles": [
+        "./cars/car-trip/car-trip.css"
+      ]
+    },
+    "area": {
+      "category": "converters",
+      "title": {
+        "ru": "Площадь — единицы",
+        "en": "Area — units",
+        "es": "Área — unidades",
+        "fr": "Aire — unités",
+        "de": "Fläche — Einheiten",
+        "zh": "面积 — 单位"
+      },
+      "module": "./converters/area/calculator.js",
+      "meta": "./converters/area/meta.js",
+      "styles": [
+        "./converters/area/area.css"
+      ]
+    },
+    "length": {
+      "category": "converters",
+      "title": {
+        "ru": "Длина и расстояние",
+        "en": "Length and distance"
+      },
+      "module": "./converters/length/calculator.js",
+      "meta": "./converters/length/meta.js",
+      "styles": [
+        "./converters/length/length.css"
+      ]
+    },
+    "mass": {
+      "category": "converters",
+      "title": {
+        "ru": "Масса",
+        "en": "Mass",
+        "es": "Masa",
+        "fr": "Masse",
+        "de": "Masse",
+        "zh": "质量"
+      },
+      "module": "./converters/mass/calculator.js",
+      "meta": "./converters/mass/meta.js",
+      "styles": [
+        "./converters/mass/mass.css"
+      ]
+    },
+    "pressure": {
+      "category": "converters",
+      "title": {
+        "ru": "Давление",
+        "en": "Pressure",
+        "es": "Presión",
+        "fr": "Pression",
+        "de": "Druck",
+        "zh": "压力"
+      },
+      "module": "./converters/pressure/calculator.js",
+      "meta": "./converters/pressure/meta.js",
+      "styles": [
+        "./converters/pressure/pressure.css"
+      ]
+    },
+    "temperature": {
+      "category": "converters",
+      "title": {
+        "ru": "Температура",
+        "en": "Temperature",
+        "es": "Temperatura",
+        "fr": "Température",
+        "de": "Temperatur",
+        "zh": "温度"
+      },
+      "module": "./converters/temperature/calculator.js",
+      "meta": "./converters/temperature/meta.js",
+      "styles": [
+        "./converters/temperature/temperature.css"
+      ]
+    },
+    "volume": {
+      "category": "converters",
+      "title": {
+        "ru": "Объём и вместимость",
+        "en": "Volume and capacity",
+        "es": "Volumen y capacidad",
+        "fr": "Volume et capacité",
+        "de": "Volumen und Fassungsvermögen",
+        "zh": "体积与容量"
+      },
+      "module": "./converters/volume/calculator.js",
+      "meta": "./converters/volume/meta.js",
+      "styles": [
+        "./converters/volume/volume.css"
+      ]
+    },
+    "currency": {
+      "category": "finance",
+      "title": {
+        "ru": "Курсы валют",
+        "en": "Currency rates",
+        "es": "Tipos de cambio",
+        "fr": "Taux de change",
+        "de": "Wechselkurse",
+        "zh": "汇率"
+      },
+      "module": "./finance/currency/calculator.js",
+      "meta": "./finance/currency/meta.js",
+      "styles": [
+        "./finance/currency/currency.css"
+      ]
+    },
+    "dots": {
+      "category": "entertainment",
+      "title": {
+        "ru": "Точки",
+        "en": "Dots",
+        "es": "Puntos",
+        "fr": "Points",
+        "de": "Punkte",
+        "zh": "点格"
+      },
+      "module": "./games/dots/calculator.js",
+      "meta": "./games/dots/meta.js",
+      "styles": [
+        "./games/dots/dots.css"
+      ]
+    },
+    "memory": {
+      "category": "entertainment",
+      "title": {
+        "ru": "Найди пару",
+        "en": "Memory",
+        "es": "Memoria",
+        "fr": "Memory",
+        "de": "Memory",
+        "zh": "记忆配对"
+      },
+      "module": "./games/memory/calculator.js",
+      "meta": "./games/memory/meta.js",
+      "styles": [
+        "./games/memory/memory.css"
+      ]
+    },
+    "simon": {
+      "category": "entertainment",
+      "title": {
+        "ru": "Симон",
+        "en": "Simon",
+        "es": "Simón",
+        "fr": "Simon",
+        "de": "Simon",
+        "zh": "西蒙"
+      },
+      "module": "./games/simon/calculator.js",
+      "meta": "./games/simon/meta.js",
+      "styles": [
+        "./games/simon/simon.css"
+      ]
+    },
+    "tic-tac-toe": {
+      "category": "entertainment",
+      "title": {
+        "ru": "Крестики-нолики",
+        "en": "Tic-Tac-Toe",
+        "es": "Tres en línea",
+        "fr": "Morpion",
+        "de": "Tic-Tac-Toe",
+        "zh": "井字棋"
+      },
+      "module": "./games/tic-tac-toe/calculator.js",
+      "meta": "./games/tic-tac-toe/meta.js",
+      "styles": [
+        "./games/tic-tac-toe/tic-tac-toe.css"
+      ]
+    },
+    "area-shape": {
+      "category": "geometry",
+      "title": {
+        "ru": "Площадь фигуры",
+        "en": "Shape area"
+      },
+      "module": "./geometry/area-shape/calculator.js",
+      "meta": "./geometry/area-shape/meta.js",
+      "styles": [
+        "./geometry/area-shape/area-shape.css"
+      ]
+    },
+    "kitchen-ingredients": {
+      "category": "kitchen",
+      "title": {
+        "ru": "Ингредиенты",
+        "en": "Ingredients",
+        "es": "Ingredientes",
+        "fr": "Ingrédients",
+        "de": "Zutaten",
+        "zh": "食材"
+      },
+      "module": "./kitchen/ingredients/calculator.js",
+      "meta": "./kitchen/ingredients/meta.js",
+      "styles": [
+        "./kitchen/ingredients/ingredients.css"
+      ]
+    }
+  }
+}
